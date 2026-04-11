@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
@@ -18,14 +18,29 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="nav-logo">Qiu.</a>
+      <div class="nav-links">
+        <a href="#projects">项目们</a>
+        <a href="#travel">世界</a>
+        <a href="https://github.com/Qiuzizhao" target="_blank" rel="noopener" class="nav-icon-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
   <section class="hero" id="hero">
+    <div class="hero-bg-blob"></div>
     <div class="hero-content">
-      <p class="hero-greeting">我是</p>
-      <h1 class="hero-title">邱</h1>
-      <p class="hero-tagline">写代码 / 做有趣的东西</p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn-text">↓ 项目</a>
+      <div class="hero-greeting reveal">Hello, I'm</div>
+      <h1 class="hero-title reveal delay-100"><span>邱</span> (Qiu)</h1>
+      <p class="hero-tagline reveal delay-200">写代码 / 做有趣的东西 / 探索世界</p>
+      <div class="hero-cta reveal delay-300">
+        <a href="#projects" class="btn-primary">发现更多 <i data-lucide="arrow-down"></i></a>
       </div>
     </div>
   </section>
@@ -33,62 +48,65 @@
   <!-- Projects Section -->
   <section class="projects" id="projects">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">项目</h2>
-        <div class="section-line"></div>
+      <div class="section-header reveal">
+        <h2 class="section-title">项目们</h2>
+        <p class="section-subtitle">近期开发的一些开源工具和有趣的项目。</p>
       </div>
 
       <div class="projects-grid">
         <!-- 项目 1 -->
-        <article class="project-card">
-          <div class="project-image-placeholder">
-            <i data-lucide="folder"></i>
+        <article class="project-card reveal">
+          <div class="project-image">
+            <img src="images/projects/1.jpg" alt="City Plan" loading="lazy" draggable="false">
           </div>
-          <h3 class="project-title">项目 1</h3>
+          <div class="project-info">
+            <h3 class="project-title">迷你城市规划师 (City Plan)</h3>
+            <p class="project-desc">一个基于 Web 的 3D 城市规划应用，使用 Three.js 和 Tailwind CSS 构建。支持丰富的建筑设施、真实的物理交通系统、动态天气与昼夜交替，以及城市规划智能评估等功能。</p>
+          </div>
           <div class="project-links">
-            <a href="#" class="project-link" target="_blank" rel="noopener">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span>GitHub</span>
+            <a href="https://github.com/Qiuzizhao/city_plan" class="project-link" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> <span>GitHub</span>
             </a>
-            <a href="#" class="project-link project-link--demo" target="_blank" rel="noopener">
-              <i data-lucide="globe"></i>
-              <span>演示</span>
+            <a href="https://qiuzizhao.github.io/city_plan/" class="project-link project-link--demo" target="_blank" rel="noopener">
+              <i data-lucide="external-link"></i> <span>演示</span>
             </a>
           </div>
         </article>
 
         <!-- 项目 2 -->
-        <article class="project-card">
+        <article class="project-card reveal delay-100">
           <div class="project-image-placeholder">
-            <i data-lucide="folder"></i>
+            <i data-lucide="terminal"></i>
           </div>
-          <h3 class="project-title">项目 2</h3>
+          <div class="project-info">
+            <h3 class="project-title">项目 2</h3>
+            <p class="project-desc">一个帮助开发者提高效率的轻量级 CLI 工具，用 Rust 编写。</p>
+          </div>
           <div class="project-links">
             <a href="#" class="project-link" target="_blank" rel="noopener">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span>GitHub</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> <span>GitHub</span>
             </a>
             <a href="#" class="project-link project-link--demo" target="_blank" rel="noopener">
-              <i data-lucide="globe"></i>
-              <span>演示</span>
+              <i data-lucide="external-link"></i> <span>演示</span>
             </a>
           </div>
         </article>
 
         <!-- 项目 3 -->
-        <article class="project-card">
+        <article class="project-card reveal delay-200">
           <div class="project-image-placeholder">
-            <i data-lucide="folder"></i>
+            <i data-lucide="database"></i>
           </div>
-          <h3 class="project-title">项目 3</h3>
+          <div class="project-info">
+            <h3 class="project-title">项目 3</h3>
+            <p class="project-desc">分布式系统下的高可用数据同步解决方案架构设计。</p>
+          </div>
           <div class="project-links">
             <a href="#" class="project-link" target="_blank" rel="noopener">
-              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              <span>GitHub</span>
+              <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg> <span>GitHub</span>
             </a>
             <a href="#" class="project-link project-link--demo" target="_blank" rel="noopener">
-              <i data-lucide="globe"></i>
-              <span>演示</span>
+              <i data-lucide="external-link"></i> <span>演示</span>
             </a>
           </div>
         </article>
@@ -96,21 +114,99 @@
     </div>
   </section>
 
+  <!-- Travel Section -->
+  <section class="travel" id="travel">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">世界</h2>
+        <p class="section-subtitle">在路上，记录光影与足迹。</p>
+      </div>
+
+      <div class="travel-timeline reveal delay-100">
+        <!-- Travel Card 1 -->
+        <div class="travel-card">
+          <div class="travel-date">2024.03</div>
+          <div class="travel-node-wrapper">
+            <div class="travel-node"></div>
+            <div class="travel-line"></div>
+          </div>
+          <div class="travel-image">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=450&fit=crop" alt="Mountain landscape" loading="lazy" draggable="false">
+          </div>
+          <div class="travel-info">
+            <span class="travel-location">云南大理</span>
+          </div>
+        </div>
+
+        <!-- Travel Card 2 -->
+        <div class="travel-card">
+          <div class="travel-date">2024.06</div>
+          <div class="travel-node-wrapper">
+            <div class="travel-node"></div>
+            <div class="travel-line"></div>
+          </div>
+          <div class="travel-image">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=450&fit=crop" alt="Japanese temple" loading="lazy" draggable="false">
+          </div>
+          <div class="travel-info">
+            <span class="travel-location">日本京都</span>
+          </div>
+        </div>
+
+        <!-- Travel Card 3 -->
+        <div class="travel-card">
+          <div class="travel-date">2024.09</div>
+          <div class="travel-node-wrapper">
+            <div class="travel-node"></div>
+            <div class="travel-line"></div>
+          </div>
+          <div class="travel-image">
+            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=450&fit=crop" alt="Paris Eiffel Tower" loading="lazy" draggable="false">
+          </div>
+          <div class="travel-info">
+            <span class="travel-location">法国巴黎</span>
+          </div>
+        </div>
+
+        <!-- Travel Card 4 -->
+        <div class="travel-card">
+          <div class="travel-date">2025.01</div>
+          <div class="travel-node-wrapper">
+            <div class="travel-node"></div>
+            <!-- 最后一个节点不需要延伸线 -->
+          </div>
+          <div class="travel-image">
+            <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&h=450&fit=crop" alt="Iceland northern lights" loading="lazy" draggable="false">
+          </div>
+          <div class="travel-info">
+            <span class="travel-location">冰岛</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <p class="footer-text">Made by 邱</p>
-      <a href="https://github.com/Qiuzizhao" class="footer-link" target="_blank" rel="noopener">
-        <i data-lucide="github"></i>
-      </a>
+      <div class="footer-brand">
+        <span class="footer-logo">Qiu.</span>
+        <p class="footer-text">© 2026 Crafted with passion.</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/Qiuzizhao" class="footer-link" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="#" class="footer-link" target="_blank" rel="noopener" aria-label="Twitter">
+          <i data-lucide="twitter"></i>
+        </a>
+        <a href="mailto:hello@example.com" class="footer-link" aria-label="Email">
+          <i data-lucide="mail"></i>
+        </a>
+      </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      lucide.createIcons();
-    });
-  </script>
 </body>
 </html>

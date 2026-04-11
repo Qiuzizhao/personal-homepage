@@ -1,168 +1,122 @@
-# 个人主页 - 设计规范
+# 个人主页 - 设计规范 (Current State)
 
 ## 1. 概念与愿景
 
-一个温暖、有故事的个人主页，像一本精心编排的个人杂志。不是冰冷的作品集，而是一个有温度的空间，邀请朋友走进你的世界。每一个项目都是一个故事章节，每一个细节都在说：「这是我」。
+一个现代、优雅且极简的个人主页。旨在通过干净的排版、流畅的动画和细腻的交互，展示个人的开源项目、技术热情以及对世界的探索（旅行记录）。它不仅是一个作品集，更是一个数字名片。
 
 ## 2. 设计语言
 
 ### 美学方向
-**杂志编辑风格 + 温暖现代主义** — 编辑杂志的精致排版结合个人日志的温暖手质感。想象一本独立杂志，关于一个有趣的人和他做的有趣的事。
+**现代极简主义 (Modern & Elegant)** — 采用大面积留白、柔和的阴影、大圆角设计以及毛玻璃（Glassmorphism）效果。配合微妙的背景渐变和高亮强调色，打造出充满科技感与呼吸感的视觉体验。
 
 ### 色彩方案
 ```css
---bg-primary: #FDF8F3;        /* 温暖奶油白 */
---bg-secondary: #F5EDE4;      /* 浅亚麻色 */
---text-primary: #2D2A26;      /* 深咖啡色 */
---text-secondary: #6B635A;    /* 温暖灰 */
---accent-primary: #C67D5E;    /* 赤陶橙 */
---accent-secondary: #8B9A7D;  /* 苔藓绿 */
---accent-tertiary: #D4A574;   /* 骆驼金 */
---highlight: #E8C5A8;          /* 蜜桃色 */
+--bg: #FAFAFB;                /* 主背景：极浅的冷灰色 */
+--bg-card: #FFFFFF;           /* 卡片背景：纯白 */
+--text: #1E293B;              /* 主文本：深青灰色 */
+--text-muted: #64748B;        /* 次文本：中青灰色 */
+--border: #E2E8F0;            /* 边框色 */
+--border-light: #F1F5F9;      /* 浅边框/占位符色 */
+--primary: #6366F1;           /* 强调色：Indigo 靛蓝 */
+--primary-hover: #4F46E5;     /* 强调色 Hover */
+--primary-light: #EEF2FF;     /* 强调色浅背景 */
 ```
+*注：页面背景还叠加了三个极其微妙的径向渐变（Radial Gradient）光晕，增加空间深度。*
 
-### 字体
-- **标题/英雄区**：Playfair Display（衬线，优雅，有编辑感）
-- **副标题**：Cormorant Garamond（精致衬线）
-- **正文**：Source Sans 3（清晰易读）
-- **代码/标签**：JetBrains Mono（项目技术栈展示）
+### 字体排印
+- **无衬线主字体**：`Plus Jakarta Sans`（现代、几何感强、清晰易读）
+- **等宽字体**：`JetBrains Mono`（用于时间轴日期等需要技术感的元素）
 
-### 空间系统
-- 大量留白，让内容呼吸
-- 区块之间的间距不均匀（32px / 64px / 120px），创造视觉韵律
-- 最大内容宽度：1200px，区域最大宽度：800px（增加亲密感）
+### 空间与圆角
+- **间距系统**：2rem (基础) / 6rem (大区块) / 10rem (超大区块)
+- **圆角系统**：20px (大容器、卡片) / 12px (小图片、内部元素) / 999px (全圆角按钮)
+- **最大内容宽度**：1100px
 
 ### 动效哲学
-- **进场动画**：staggered fade-up，模拟翻页的从容
-- **悬停**：微妙的 scale (1.02) + 阴影加深，像在拿起一本书
-- **滚动触发**：章节淡入，增加探索感
-- **时间**：400-600ms，ease-out，优雅不急促
-
-### 视觉资源
-- 背景：subtle paper texture（造纸业的温暖感）
-- 装饰：手绘风格的几何线条（圆形、波浪线）
-- 图标：Lucide Icons（线条风格统一）
-- 项目截图：圆角 + 柔和阴影，像照片一样展示
+- **进场动画 (Reveal)**：使用 `Intersection Observer` 实现元素的平滑上浮淡入（40px 偏移，0.8s 缓动），并带有 100-300ms 的交错延迟（Staggered）。
+- **悬停交互 (Hover)**：
+  - 卡片：优雅上浮（translateY -10px）配合阴影加深。
+  - 按钮/链接：色彩反转、微缩放或图标位移。
+  - 图片：内部图片缓慢放大（Scale 1.08）。
+- **时间轴拖拽**：旅行时间轴支持鼠标拖拽滑动，提供丝滑的物理阻尼感。
 
 ## 3. 页面结构
 
 ### 页面流程
 ```
+[导航栏 Navbar] (固定在顶部，毛玻璃效果)
+├── Logo
+└── 锚点链接 + GitHub 图标
+
 [英雄区 Hero]
-├── 大标题 + 个人 tagline
-├── 一句话介绍
-└── 向下滚动提示（动画）
+├── 动态网格背景底纹
+├── 问候语标签 (Hello, I'm)
+├── 渐变大标题 (邱 Qiu)
+├── 个人 tagline (写代码 / 做有趣的东西 / 探索世界)
+└── CTA 按钮 (发现更多)
 
 [项目区 Projects]
-├── 区块标题（「项目们」）
-├── 项目卡片列表（带年份、技术栈、简介、截图）
-└── 每个项目可点击查看详情
+├── 区块标题与副标题
+└── 项目卡片网格 (包含 City Plan 等项目)
+    ├── 项目截图 / 占位图
+    ├── 项目标题与描述
+    └── 操作链接 (GitHub, Demo)
 
-[关于区 About]
-├── 个人照片（可选）
-├── 个人故事/介绍
-└── 兴趣、爱好或有趣的 facts
-
-[联系方式区 Contact]
-├── 联系方式/社交链接
-└── 结尾语
+[旅行区 Travel / 世界]
+├── 区块标题与副标题
+└── 水平横向滚动时间轴
+    └── 旅行卡片 (日期、时间节点、风景图、地点名称)
 
 [页脚 Footer]
-└── 版权 + GitHub 链接
+├── 品牌 Logo 与版权信息
+└── 社交媒体链接 (GitHub, Twitter, Mail)
 ```
 
 ### 响应式策略
-- Desktop：双栏布局（项目卡片）
-- Tablet：单栏，卡片更大
-- Mobile：完全单栏，保持阅读舒适度
+- **Desktop (>768px)**：完整的多栏网格布局，横向滚动的时间轴。
+- **Tablet (<768px)**：导航栏间距缩小，项目卡片转为单栏或双栏紧凑布局，标题字号缩减。
+- **Mobile (<480px)**：完全单栏布局，缩小卡片宽度，优化移动端触控体验（如 Touch 滚动时间轴）。
 
-## 4. 功能与交互
+## 4. 核心功能与交互细节
 
-### 英雄区
-- 进厂时文字 staggered 动画
-- 滚动提示箭头持续动画（bounce）
-- 鼠标移动时背景有微妙的 parallax 效果
+### 导航栏 (Navbar)
+- 使用 `backdrop-filter: blur(16px)` 实现毛玻璃效果。
+- 页面滚动时自动增加下阴影。
+- 链接 Hover 时带有从左至右展开的下划线动画。
 
-### 项目卡片
-- 项目截图展示（16:10 比例）
-- 项目名称、年份、技术栈标签
-- 项目简介（可从 GitHub README 截取）
-- GitHub 链接 + 在线地址（如有）
-- Hover：轻微上浮 + 左边框高亮
+### 项目卡片 (Project Card)
+- 16:10 比例的图片容器。
+- 鼠标悬停时，图片容器内的占位 SVG 图标会变为强调色，真实图片则会平滑放大。
+- 操作按钮（链接）在悬停时呈现填充色反转和阴影扩散。
 
-### 关于区
-- 个人照片区（圆形裁切，边框装饰）
-- 个人介绍文字
-- 基本信息（地点、职业等）
+### 旅行时间轴 (Travel Timeline)
+- 默认状态下透明并禁用交互，当用户滚动到该区域（触发 wheel 或 touchmove）时淡入显示。
+- 支持原生横向滚动条，同时支持**鼠标左键按下拖拽滑动**。
+- 带有自定义样式的 Webkit 滚动条。
+- 时间节点（小圆点）与连接线在 Hover 时会放大并点亮为强调色。
 
-### 联系方式区
-- 社交链接 icons
-- Hover 时 icon 变色 + scale
+## 5. 技术栈与工程架构
 
-## 5. 组件清单
+### 核心技术
+- **纯 HTML5 + CSS3 + Vanilla JavaScript**（无任何框架依赖，极致轻量）
+- **CSS 变量 (Custom Properties)** 用于全局主题控制。
+- **CSS Grid & Flexbox** 混合布局。
+- **Intersection Observer API** 用于高性能的滚动动画。
 
-### 英雄标题
-- 字体：Playfair Display, 72px (desktop) / 48px (mobile)
-- 颜色：--text-primary
-- 动画：fade-up, 延迟 0ms
+### 依赖资源
+- **图标**：`Lucide Icons` (通过 CDN 引入的轻量级 SVG 图标库)
+- **字体**：`Google Fonts` (Plus Jakarta Sans, JetBrains Mono)
+- **图片**：项目本地图片 + Unsplash 占位图
 
-### 区块标题
-- 字体：Cormorant Garamond, 36px
-- 下方装饰线（accent-primary）
-- 动画：fade-up
-
-### 项目卡片
-- 截图：16:10 比例，圆角
-- 背景：--bg-secondary
-- 圆角：16px
-- 内边距：24px
-- 内部：年份、标题、描述、技术栈标签、链接
-- Hover：translateY(-6px), shadow 加强
-- 状态：default / hover
-
-### 技术标签
-- 小型胶囊形状
-- 字体：JetBrains Mono, 12px
-- 背景：--highlight
-- 间距：4px gap
-
-### 社交图标
-- 56x56 clickable area
-- Lucide icon, 24px
-- 颜色：--text-secondary
-- Hover：--accent-primary, scale(1.05), translateY(-4px)
-
-### 滚动指示器
-- 向下箭头
-- 持续 bounce 动画
-- 位置：hero 底部中央
-
-## 6. 技术方案
-
-### 框架
-- **纯 HTML + CSS + JavaScript**（无框架，最大兼容性）
-- 便于 GitHub Pages 直接部署
-
-### 文件结构
-```
+### 文件目录结构
+```text
 personal-homepage/
-├── index.html          # 主页
+├── index.html          # 主入口文件
 ├── css/
-│   └── style.css       # 样式
+│   └── style.css       # 全局样式与响应式布局
 ├── js/
-│   └── main.js         # 交互逻辑
-├── images/             # 项目截图
-└── SPEC.md            # 设计规范
+│   └── main.js         # 交互逻辑 (滚动监听、拖拽逻辑、动画触发)
+├── images/             # 本地图片资源
+│   └── projects/
+└── SPEC.md             # 设计规范文档 (本文档)
 ```
-
-### 部署
-- 直接上传到 GitHub 仓库
-- 开启 GitHub Pages
-- 可用自定义域名
-
-### 关键实现
-- CSS Custom Properties 管理颜色和字体
-- Intersection Observer 实现滚动触发动画
-- CSS Grid + Flexbox 布局
-- Google Fonts CDN 载入字体
-- Lucide Icons CDN 载入图标
