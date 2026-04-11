@@ -13,13 +13,6 @@
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script>
-    lucide.createIcons({
-      attrs: {
-        class: 'lucide-icon'
-      }
-    });
-  </script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
@@ -112,5 +105,10 @@
   </section>
 
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      lucide.createIcons();
+    });
+  </script>
 </body>
 </html>
