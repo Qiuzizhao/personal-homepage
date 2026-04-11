@@ -5,13 +5,15 @@
 /* CSS Variables */
 :root {
   --bg-primary: #FFFFFF;
-  --bg-secondary: #F5F5F5;
+  --bg-secondary: #F0F0F0;
+  --bg-dark: #1A1A1A;
   --text-primary: #1A1A1A;
   --text-secondary: #666666;
+  --text-inverse: #FFFFFF;
   --accent-primary: #000000;
   --accent-secondary: #333333;
   --accent-tertiary: #999999;
-  --highlight: #E5E5E5;
+  --highlight: #E0E0E0;
 
   --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -28,13 +30,13 @@
   --max-width: 1200px;
   --reading-width: 800px;
 
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
 
-  --shadow-sm: 0 2px 8px rgba(45, 42, 38, 0.06);
-  --shadow-md: 0 4px 20px rgba(45, 42, 38, 0.08);
-  --shadow-lg: 0 8px 40px rgba(45, 42, 38, 0.12);
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
 
   --transition-fast: 200ms ease-out;
   --transition-normal: 400ms ease-out;
@@ -129,6 +131,7 @@ a {
   text-align: center;
   padding: var(--space-lg);
   position: relative;
+  background: var(--bg-dark);
 }
 
 .hero-content {
@@ -137,32 +140,32 @@ a {
 
 .hero-greeting {
   font-family: var(--font-body);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: #888888;
   margin-bottom: var(--space-sm);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 12vw, 6rem);
+  font-size: clamp(4rem, 15vw, 8rem);
   font-weight: 700;
   line-height: 1;
-  color: var(--text-primary);
+  color: var(--text-inverse);
   margin-bottom: var(--space-md);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .hero-tagline {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: #888888;
   line-height: 1.6;
   margin-bottom: var(--space-lg);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
 }
 
 .hero-cta {
@@ -173,7 +176,7 @@ a {
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--text-inverse);
   padding: var(--space-sm) 0;
   border: none;
   letter-spacing: 0.1em;
@@ -182,7 +185,7 @@ a {
 }
 
 .btn-text:hover {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 /* Hero Stagger Delays */
@@ -203,7 +206,7 @@ a {
   font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #888888;
   margin-bottom: var(--space-sm);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -212,7 +215,7 @@ a {
 .section-line {
   width: 16px;
   height: 1px;
-  background: var(--text-primary);
+  background: #444444;
   margin: 0;
 }
 
@@ -220,21 +223,22 @@ a {
    Projects Section
    ============================================ */
 .projects {
-  background: var(--bg-primary);
-  padding-top: var(--space-lg);
+  background: var(--bg-dark);
+  padding: var(--space-xl) 0;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
+  gap: 2px;
   max-width: 1000px;
   margin: 0 auto;
+  background: var(--accent-primary);
 }
 
 .project-card {
-  background: var(--bg-primary);
-  transition: opacity var(--transition-fast);
+  background: var(--bg-dark);
+  transition: background var(--transition-fast);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -245,7 +249,7 @@ a {
 }
 
 .project-card:hover {
-  opacity: 0.7;
+  background: #2a2a2a;
 }
 
 /* Project Image */
@@ -254,17 +258,17 @@ a {
   aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
-  background: var(--bg-secondary);
+  background: #2a2a2a;
 }
 
 .project-image-placeholder {
   width: 100%;
   aspect-ratio: 16 / 10;
-  background: var(--bg-secondary);
+  background: #2a2a2a;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
+  color: #666666;
 }
 
 .project-image-placeholder svg {
@@ -297,7 +301,7 @@ a {
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--text-inverse);
   margin-bottom: 8px;
   line-height: 1.4;
   letter-spacing: 0;
@@ -317,11 +321,11 @@ a {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 0.7rem;
-  color: var(--text-primary);
+  font-size: 0.65rem;
+  color: var(--text-inverse);
   letter-spacing: 0.05em;
-  padding: 4px 10px;
-  border: 1px solid var(--text-primary);
+  padding: 6px 12px;
+  border: 1px solid #444444;
   transition: all var(--transition-fast);
 }
 
@@ -329,11 +333,13 @@ a {
 .project-link .icon {
   width: 12px;
   height: 12px;
+  fill: currentColor;
 }
 
 .project-link:hover {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+  background: var(--text-inverse);
+  color: var(--bg-dark);
+  border-color: var(--text-inverse);
 }
 
 .project-link--demo {
@@ -508,9 +514,9 @@ a {
    Footer
    ============================================ */
 .footer {
-  padding: var(--space-lg) 0;
-  background: var(--bg-primary);
-  border-top: 1px solid var(--bg-secondary);
+  padding: var(--space-md) 0;
+  background: var(--bg-dark);
+  border-top: 1px solid #333333;
 }
 
 .footer .container {
@@ -521,8 +527,8 @@ a {
 
 .footer-text {
   font-family: var(--font-body);
-  font-size: 0.75rem;
-  color: var(--text-secondary);
+  font-size: 0.7rem;
+  color: #666666;
   letter-spacing: 0.05em;
 }
 
@@ -532,19 +538,17 @@ a {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
+  color: #666666;
+  transition: color var(--transition-fast);
 }
 
 .footer-link svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .footer-link:hover {
-  color: var(--accent-primary);
-  background: var(--bg-secondary);
+  color: var(--text-inverse);
 }
 
 /* ============================================
