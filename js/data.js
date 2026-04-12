@@ -102,7 +102,7 @@ const siteData = {
       "id": 1775981122302,
       "title": "AI 贪吃蛇（Gluttonous-Snake）",
       "description": "一个支持“手动游玩”与“AI 自动游玩”的双模式贪吃蛇项目。基于 MaskablePPO 强化学习算法和 CnnPolicy（卷积神经网络）构建，通过 84x84 图像化状态输入与动作掩码机制，让贪吃蛇自主学习避险与寻路，非常适合强化学习的快速体验与实践。",
-      "image": "images/projects/project-1775981144933-1775981144933.png",
+      "image": "images/projects/project-1775981242850-1775981242850.png",
       "links": [
         {
           "name": "GitHub",
