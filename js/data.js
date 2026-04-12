@@ -63,7 +63,7 @@ const siteData = {
       "id": 1775936000000,
       "title": "八数码问题求解器（8-Puzzle Problem Solver）",
       "description": "一个基于 C++ 和 Qt 框架开发的八数码问题可视化求解程序。内置了广度优先搜索（BFS）、深度优先搜索（DFS）、迭代加深搜索（IDDFS）和最佳优先搜索（A*）等多种经典搜索算法，并提供直观的图形界面展示求解路径与性能对比。",
-      "image": "https://images.unsplash.com/photo-1618045652516-72f883271167?w=600&h=450&fit=crop",
+      "image": "images/projects/project-1775965459456-1775965459456.png",
       "links": [
         {
           "name": "GitHub",
