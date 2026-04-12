@@ -86,40 +86,7 @@ const siteData = {
       ]
     }
   ],
-  "travels": [
-    {
-      "id": 1,
-      "date": "2024.03",
-      "location": "云南大理",
-      "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=450&fit=crop",
-      "alt": "Mountain landscape",
-      "isLast": false
-    },
-    {
-      "id": 2,
-      "date": "2024.06",
-      "location": "日本京都",
-      "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=450&fit=crop",
-      "alt": "Japanese temple",
-      "isLast": false
-    },
-    {
-      "id": 3,
-      "date": "2024.09",
-      "location": "法国巴黎",
-      "image": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=450&fit=crop",
-      "alt": "Paris Eiffel Tower",
-      "isLast": false
-    },
-    {
-      "id": 4,
-      "date": "2025.01",
-      "location": "冰岛",
-      "image": "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=600&h=450&fit=crop",
-      "alt": "Iceland northern lights",
-      "isLast": true
-    }
-  ]
+  "travels": []
 };
 
 // 确保可以在全局访问数据
