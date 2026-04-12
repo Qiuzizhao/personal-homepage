@@ -24,7 +24,7 @@ const siteData = {
       "id": 1775934321591,
       "title": "生成式人工智能后端（AI Backend）",
       "description": "一个多模态 AI 后端服务，基于 Python 开发，提供统一的 HTTP API。项目集成了涵盖文本/图像/音频的 19 项核心 AI 功能，包括知识库增强对话（RAG）、文生图（Stable Diffusion）、文本转语音（TTS）以及图像向量化等，支持前端或其它服务直接调用。",
-      "image": "images/projects/project-1775934327605-1775934327605.png",
+      "image": "images/projects/project-1775977999413-1775977999413.png",
       "links": [
         {
           "name": "GitHub",
@@ -50,7 +50,7 @@ const siteData = {
       "id": 1775935673428,
       "title": "昇腾目标检测后端（Ascend Object Detection Backend）",
       "description": "基于华为昇腾（Ascend）生态与 MindSpore 框架开发的目标检测服务。项目集成了 19 种细分场景的 AI 视觉能力（如安全帽、火焰、打架行为等），通过 RESTful API 提供高性能的图像与视频流推理支持。",
-      "image": "images/projects/project-1775935676660-1775935676660.png",
+      "image": "images/projects/project-1775977995448-1775977995448.png",
       "links": [
         {
           "name": "GitHub",
