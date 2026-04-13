@@ -64,4 +64,4 @@ personal-homepage/
 - [ ] 填满世界地图的足迹
 
 ---
-*Made with ❤️ by Qiu. Crafted with passion.* 
+*Made with ❤️ by Qiu. Crafted with passion.*
